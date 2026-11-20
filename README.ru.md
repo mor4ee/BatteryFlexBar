@@ -20,10 +20,23 @@
 Проверенная базовая версия — **2.2.3**. Полный тест на 2.2.5 Pre-release
 ещё не проведён. FlexStudio SDK v2 не используется.
 
-Основные проверенные устройства: Logitech MX Master 4 через Bolt и G305 через
-LIGHTSPEED, Keychron M6 через Keychron Link, Lamzu Paro и DualSense.
-Перед установкой сверьте модель и способ подключения с
-[таблицей совместимости](docs/COMPATIBILITY.md): остальные маршруты отмечены как бета.
+## Поддерживаемые устройства
+
+| Проверено | Способ подключения |
+| --- | --- |
+| Logitech MX Master 4 | Logi Bolt |
+| Logitech G305 LIGHTSPEED | Родной донгл, в том числе с закрытым G HUB |
+| Keychron M6 | Приёмник 1K Keychron Link |
+| Lamzu Paro | Донгл 2,4 ГГц и USB; отключение и восстановление на панели проверены с донглом |
+| Sony DualSense | USB и Bluetooth с расширенными отчётами; процент приблизительный |
+
+**Beta:** G502 LIGHTSPEED, Keychron M7 и другие отдельные модели Keychron RF,
+Lamzu Aurora, отдельные профили мышей и клавиатур Glorious, Rapoo, Razer,
+Corsair, HyperX, SteelSeries, ASUS ROG и других производителей.
+Для геймпадов в Beta: DualSense Edge, DualShock 4, Switch Pro и Xbox.
+Windows Bluetooth, стандартный HID и опциональный HeadsetControl тоже в Beta.
+Сверяйте конкретную модель и способ подключения по
+[таблице совместимости](docs/COMPATIBILITY.md).
 
 Готовый пакет можно будет скачать из [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases).
 До публикации доступна [локальная сборка из исходников](README.md#build-from-source).

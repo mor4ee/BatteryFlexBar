@@ -15,8 +15,8 @@ baseline; the full 2.2.5 Pre-release regression is still pending.
 | Lamzu Paro | 2.4 GHz receiver; USB cable | Both read via HID; on-panel disconnect and recovery checked with the receiver |
 | Sony DualSense | USB; Bluetooth with extended reports | Battery read on both connections; the report provides a range, not an exact percentage |
 
-DualSense Edge uses a beta profile. For Bluetooth setup and the optional
-extended mode, see [Setup](SETUP.md#dualsense-over-bluetooth).
+For Bluetooth setup and the optional extended mode, see
+[Setup](SETUP.md#dualsense-over-bluetooth).
 
 ## Beta routes
 
@@ -41,6 +41,7 @@ been verified by upstream projects but are not hardware-certified here.
 | HyperX | Pulsefire Haste 2, Core Wireless and Mini via their supported receivers. A Core can temporarily report 40% after power-on. |
 | SteelSeries | Aerox 3 Wireless (original and Gen 2) and Aerox 5 Wireless, USB or dedicated receiver. |
 | ASUS ROG | Azoth and Harpe Ace Aim Lab via USB or an eligible dedicated receiver. Shared Omni receivers are not generally supported. |
+| DualSense Edge | USB and Bluetooth profile; basic Bluetooth reports do not include battery data. |
 | DualShock 4 | USB, in 10% steps; Bluetooth is outside this profile. |
 | Nintendo Switch Pro | USB, in 25% steps, only if the host already enabled full input reports. Battery does not switch the mode. |
 | Xbox | Windows.Gaming.Input when capacity is available; otherwise XInput levels `EMPTY`, `LOW`, `MID`, `FULL`, keyed by player slot. |

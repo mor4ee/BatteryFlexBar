@@ -1,7 +1,7 @@
 {
   "name": "Battery",
   "uuid": "com.mor4ee.battery",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-beta.1",
   "author": "mor4ee",
   "entry": "backend/plugin.cjs",
   "description": "Show peripheral battery levels on Flexbar.",

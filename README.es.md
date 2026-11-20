@@ -20,9 +20,18 @@ Requiere Windows 10/11 (x64), FlexBar y FlexDesigner con **Plugin API v1**.
 La versión de referencia verificada es **2.2.3**. Las pruebas de hardware de
 2.2.5 Pre-release están pendientes. No es un plugin de FlexStudio SDK v2.
 
-Se han probado Logitech MX Master 4 por Bolt, G305 por LIGHTSPEED, Keychron M6
-por Keychron Link, Lamzu Paro y DualSense. Consulta [la tabla de compatibilidad](docs/COMPATIBILITY.md)
-para conocer las conexiones verificadas y los perfiles beta.
+## Dispositivos compatibles
+
+**Probados en hardware:** Logitech MX Master 4 (Logi Bolt), Logitech G305
+LIGHTSPEED (receptor original), Keychron M6 (receptor Keychron Link 1K),
+Lamzu Paro (receptor de 2,4 GHz y USB) y Sony DualSense (USB y Bluetooth con
+informes ampliados; el porcentaje es estimado).
+
+**Beta:** G502 LIGHTSPEED, Keychron M7 y otros perfiles Keychron RF, Lamzu
+Aurora, modelos seleccionados de ratones y teclados, DualSense Edge,
+DualShock 4, Switch Pro y mandos Xbox. También están en beta las lecturas
+Bluetooth de Windows, HID estándar y HeadsetControl. Consulta
+[la tabla de compatibilidad](docs/COMPATIBILITY.md) para ver modelos y conexiones.
 
 El paquete estará en [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases)
 cuando se publique. También se puede [compilar localmente](README.md#build-from-source).

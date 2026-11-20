@@ -19,9 +19,17 @@
 FlexDesigner。已验证的基准版本是 **2.2.3**。2.2.5 预发布版仍需完整的硬件
 回归测试。本插件不使用 FlexStudio SDK v2。
 
-已测试通过 Bolt 连接的 Logitech MX Master 4、通过 LIGHTSPEED 连接的 G305、
-通过 Keychron Link 连接的 Keychron M6，以及 Lamzu Paro 和 DualSense。
-[兼容性表](docs/COMPATIBILITY.md)列出了已验证的连接方式和测试版设备。
+## 支持的设备
+
+**已在硬件上测试：** Logitech MX Master 4（Logi Bolt）、Logitech G305
+LIGHTSPEED（原装接收器）、Keychron M6（1K Keychron Link 接收器）、
+Lamzu Paro（2.4 GHz 接收器和 USB）以及 Sony DualSense（USB 和启用扩展报告的
+蓝牙连接；百分比为估算值）。
+
+**Beta（测试版）：** G502 LIGHTSPEED、Keychron M7 和部分其他 Keychron RF 型号、
+Lamzu Aurora、部分鼠标和键盘、DualSense Edge、DualShock 4、Switch Pro 和 Xbox
+手柄。Windows 蓝牙电量、标准 HID 电量和可选的 HeadsetControl 也处于测试阶段。
+具体型号和连接要求请参阅[兼容性表](docs/COMPATIBILITY.md)。
 
 发布后可从 [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases) 下载，
 也可以[在本地构建](README.md#build-from-source)。本插件不会将电量数据发送到云端。

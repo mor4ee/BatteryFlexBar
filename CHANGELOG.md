@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0-alpha.1 — Release preview
+## 0.1.0-beta.1 — First beta
 
 - Text-based Battery level Unit with device choice, native Foreground styling,
   tap-to-refresh, and charging/unavailable indicators.
