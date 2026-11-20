@@ -1,0 +1,41 @@
+name: Validate Windows package
+
+on:
+  push:
+    branches: [public]
+    tags: ['v*']
+  pull_request:
+    branches: [public]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '26.13.1'
+          cache: npm
+      - name: Check release version
+        if: github.ref_type == 'tag'
+        run: |
+          $version = (Get-Content package.json -Raw | ConvertFrom-Json).version
+          if ($env:GITHUB_REF_NAME -ne "v$version") { throw 'Tag must match the package version' }
+      - run: npm ci
+      - run: npm run native:restore
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: .\native\bin\BatteryHidHelper.exe --self-test
+      - run: npm run validate
+      - run: npm run pack
+      - run: npm run release:stage
+      - uses: actions/upload-artifact@v4
+        with:
+          name: battery-windows-x64
+          path: release/v*/
+          if-no-files-found: error

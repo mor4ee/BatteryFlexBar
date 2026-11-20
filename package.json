@@ -1,0 +1,41 @@
+{
+  "name": "battery-flexbar",
+  "version": "0.1.0-alpha.1",
+  "private": true,
+  "description": "Peripheral battery monitor plugin for FlexDesigner and Flexbar",
+  "license": "MIT",
+  "author": "mor4ee",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mor4ee/BatteryFlexBar.git"
+  },
+  "engines": {
+    "node": ">=22.17"
+  },
+  "scripts": {
+    "native:restore": "powershell -NoProfile -ExecutionPolicy Bypass -File native/restore-dependencies.ps1",
+    "native:build": "powershell -NoProfile -ExecutionPolicy Bypass -File native/build.ps1",
+    "build": "npm run native:build && tsc -p tsconfig.v1.json && rollup -c",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \".test-dist/tests/**/*.test.js\"",
+    "validate": "node scripts/flexcli.mjs plugin validate --path com.mor4ee.battery.plugin",
+    "prepack": "node scripts/check-default.mjs",
+    "pack": "node scripts/flexcli.mjs --port 1 plugin pack --path com.mor4ee.battery.plugin",
+    "release:stage": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/stage-release.ps1"
+  },
+  "dependencies": {
+    "@eniac/flexdesigner": "1.0.9",
+    "ws": "8.21.3"
+  },
+  "devDependencies": {
+    "@eniac/flexcli": "1.0.7",
+    "@napi-rs/canvas": "0.1.80",
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.2",
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.18.1",
+    "rollup": "^4.0.2",
+    "typescript": "^5.3.0"
+  }
+}

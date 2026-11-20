@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "noEmit": false,
+    "outDir": ".v1-build",
+    "rootDir": "src",
+    "sourceMap": true
+  },
+  "include": [],
+  "files": ["src/v1/plugin.ts"]
+}

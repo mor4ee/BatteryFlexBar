@@ -1,0 +1,13 @@
+__pycache__/
+node_modules/
+.test-dist/
+tests/**/*.js
+tests/**/*.js.map
+native/.packages/
+native/bin/
+.v1-build/
+com.mor4ee.battery.plugin/backend/
+com.mor4ee.battery.plugin/native/
+com.mor4ee.battery.plugin/logs/
+*.flexplugin
+release/

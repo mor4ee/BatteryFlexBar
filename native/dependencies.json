@@ -1,0 +1,9 @@
+{
+  "hidSharp": {
+    "version": "2.6.4",
+    "url": "https://api.nuget.org/v3-flatcontainer/hidsharp/2.6.4/hidsharp.2.6.4.nupkg",
+    "sha256": "CF55D4B4D7B42DC1D8496B7B592BA00D1ECD48A70BC07BD8DABD3E9976D108E7",
+    "assembly": "lib/net35/HidSharp.dll",
+    "license": "Apache-2.0"
+  }
+}

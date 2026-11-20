@@ -1,0 +1,26 @@
+name: Battery bug or hardware compatibility
+description: Report a reproducible issue or an unlisted peripheral
+title: '[Battery]: '
+body:
+  - type: markdown
+    attributes:
+      value: Do not include device serials, Bluetooth addresses, personal paths, or unredacted logs.
+  - type: input
+    id: versions
+    attributes:
+      label: Battery, FlexDesigner and Windows versions
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Device model and connection (USB, Bluetooth, or receiver)
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: What happened, and how do we reproduce it?
+      description: Include expected reading, actual reading, charge state, and whether vendor software was running.
+    validations:
+      required: true

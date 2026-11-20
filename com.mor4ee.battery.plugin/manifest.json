@@ -1,0 +1,118 @@
+{
+  "name": "Battery",
+  "uuid": "com.mor4ee.battery",
+  "version": "0.1.0-alpha.1",
+  "author": "mor4ee",
+  "entry": "backend/plugin.cjs",
+  "description": "Show peripheral battery levels on Flexbar.",
+  "repo": "https://github.com/mor4ee/BatteryFlexBar",
+  "sdk": {
+    "version": "1.0.7"
+  },
+  "software": {
+    "minimumVersion": "1.3.0"
+  },
+  "os": [
+    {
+      "platform": "windows",
+      "minimumVersion": "10"
+    }
+  ],
+  "device": [
+    {
+      "name": "flexbar",
+      "version": "1.0.0"
+    }
+  ],
+  "keyLibrary": {
+    "title": "$PluginName",
+    "style": {
+      "icon": "mdi mdi-battery"
+    },
+    "children": [
+      {
+        "title": "$BatteryLevel.Title",
+        "tip": "$BatteryLevel.Tip",
+        "cid": "com.mor4ee.battery.level",
+        "config": {
+          "keyType": "default",
+          "clickable": true,
+          "platform": ["windows"]
+        },
+        "style": {
+          "icon": "mdi mdi-battery",
+          "width": 180,
+          "font": "",
+          "fontSize": 28,
+          "showIcon": false,
+          "showTitle": true
+        },
+        "data": {
+          "schemaVersion": 3,
+          "deviceId": "",
+          "dualSenseEnhancedBluetooth": false
+        }
+      }
+    ]
+  },
+  "local": {
+    "en": {
+      "PluginName": "Battery",
+      "BatteryLevel": {
+        "Title": "Battery level",
+        "Tip": "Show the battery level of a supported peripheral",
+        "UI": {
+          "Device": "Device",
+          "Refresh": "Refresh devices",
+          "NoDevices": "No supported battery devices are currently available.",
+          "ForegroundHint": "Configure the text font, size and position on the Foreground tab.",
+          "ActionFailed": "Unable to load battery devices.",
+          "Charging": "Charging",
+          "Unavailable": "Unavailable",
+          "Beta": "Beta",
+          "WindowsBluetoothBeta": "Windows battery (Beta)",
+          "StandardHidBeta": "Standard HID (Beta)",
+          "DualSenseEstimate": "DualSense reports battery level in 10% ranges. The displayed percentage is an estimate at the middle of each range (for example, 85%).",
+          "DualSenseSimpleModeLabel": "Bluetooth basic mode: battery unavailable",
+          "DualSenseSimpleMode": "This controller is connected in Bluetooth basic mode, which does not report battery data. Use USB or explicitly allow extended Bluetooth reports below.",
+          "DualSenseEnhancedBluetooth": "Allow extended Bluetooth reports for this controller",
+          "DualSenseEnhancedWarning": "Enabling this can affect older DirectInput games until you turn the controller off and on again. Switching this option off only stops future activation. Battery does not change lights or vibration.",
+          "DualSenseEnableFailed": "Unable to enable extended Bluetooth reports.",
+          "Receiver": "wireless receiver",
+          "Bluetooth": "Bluetooth",
+          "USB": "USB",
+          "UnknownTransport": "unknown connection"
+        }
+      }
+    },
+    "ru": {
+      "PluginName": "Батарея",
+      "BatteryLevel": {
+        "Title": "Уровень заряда",
+        "Tip": "Показывает заряд поддерживаемого периферийного устройства",
+        "UI": {
+          "Device": "Устройство",
+          "Refresh": "Обновить список устройств",
+          "NoDevices": "Поддерживаемые устройства с батареей сейчас недоступны.",
+          "ForegroundHint": "Шрифт, размер и положение текста настраиваются на вкладке Foreground.",
+          "ActionFailed": "Не удалось загрузить список устройств.",
+          "Charging": "Заряжается",
+          "Unavailable": "Недоступно",
+          "Beta": "Бета",
+          "WindowsBluetoothBeta": "Заряд из Windows (бета)",
+          "StandardHidBeta": "Стандартный HID (бета)",
+          "DualSenseEstimate": "DualSense сообщает заряд диапазонами по 10%. Отображается оценка в середине диапазона (например, 85%).",
+          "DualSenseSimpleModeLabel": "Базовый режим Bluetooth: заряд недоступен",
+          "DualSenseSimpleMode": "Контроллер подключён в базовом режиме Bluetooth, в котором нет данных о батарее. Используйте USB или явно разрешите расширенные отчёты Bluetooth ниже.",
+          "DualSenseEnhancedBluetooth": "Разрешить расширенные отчёты Bluetooth для этого контроллера",
+          "DualSenseEnhancedWarning": "Включение может повлиять на старые игры с DirectInput до выключения и повторного включения контроллера. Отключение этой опции только запрещает будущую активацию. Battery не меняет подсветку или вибрацию.",
+          "DualSenseEnableFailed": "Не удалось включить расширенные отчёты Bluetooth.",
+          "Receiver": "беспроводной приёмник",
+          "Bluetooth": "Bluetooth",
+          "USB": "USB",
+          "UnknownTransport": "неизвестное подключение"
+        }
+      }
+    }
+  }
+}

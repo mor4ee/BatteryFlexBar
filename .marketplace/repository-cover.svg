@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Battery for FlexBar</title>
+  <desc id="desc">A product illustration showing 82 percent for a mouse, 64 percent while a keyboard charges, and an unavailable controller.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#12201f"/>
+      <stop offset="1" stop-color="#0b1017"/>
+    </linearGradient>
+    <linearGradient id="left" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#202c29"/>
+      <stop offset="1" stop-color="#151d22"/>
+    </linearGradient>
+    <linearGradient id="panel" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#26333a"/>
+      <stop offset="0.13" stop-color="#0d1318"/>
+      <stop offset="0.87" stop-color="#0a0e12"/>
+      <stop offset="1" stop-color="#1b262d"/>
+    </linearGradient>
+    <pattern id="grid" width="23" height="23" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#78938e" opacity=".16"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="640" rx="36" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="36" fill="url(#grid)"/>
+
+  <rect x="40" y="40" width="482" height="560" rx="28" fill="url(#left)" stroke="#344740"/>
+  <rect x="550" y="40" width="690" height="383" rx="28" fill="#10171d" stroke="#2b3a40"/>
+  <rect x="550" y="451" width="330" height="149" rx="26" fill="#172321" stroke="#31463d"/>
+  <rect x="908" y="451" width="332" height="149" rx="26" fill="#191f2b" stroke="#30394b"/>
+
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="80" y="80" width="58" height="58" rx="17" fill="#b8ffa8"/>
+    <g transform="translate(93 98)" stroke="#143321" stroke-width="2.3">
+      <rect width="29" height="20" rx="4" fill="none"/>
+      <path d="M30 7h3v6h-3" fill="none"/>
+      <path d="M17 3l-7 8h5l-2 6 8-9h-6Z" fill="#143321" stroke="none"/>
+    </g>
+    <text x="155" y="114" fill="#b8ffa8" font-size="15" font-weight="700" letter-spacing="3">PLUGIN FOR FLEXBAR</text>
+    <text x="80" y="250" fill="#f4fff7" font-size="95" font-weight="750" letter-spacing="-5">Battery</text>
+    <text x="84" y="321" fill="#b8ffa8" font-size="62" font-weight="650" letter-spacing="-2.6">for FlexBar</text>
+    <text x="85" y="395" fill="#c7d6d2" font-size="23">See what’s charged at a glance.</text>
+    <text x="85" y="431" fill="#c7d6d2" font-size="23">Mouse, keyboard and controller.</text>
+    <g font-size="15" font-weight="650">
+      <rect x="80" y="517" width="134" height="41" rx="20.5" fill="#293b33"/>
+      <text x="147" y="544" fill="#d1eddf" text-anchor="middle">Windows x64</text>
+      <rect x="229" y="517" width="139" height="41" rx="20.5" fill="#293b33"/>
+      <text x="298.5" y="544" fill="#d1eddf" text-anchor="middle">Plugin API v1</text>
+    </g>
+
+    <text x="586" y="97" fill="#caf0dd" font-size="15" font-weight="700" letter-spacing="3">ON YOUR PANEL</text>
+    <circle cx="1195" cy="91" r="5" fill="#9dec94"/>
+    <rect x="588" y="153" width="614" height="137" rx="21" fill="#06090a" opacity=".60" transform="translate(0 7)"/>
+    <rect x="586" y="151" width="618" height="138" rx="21" fill="url(#panel)" stroke="#556568" stroke-width="1.5"/>
+    <rect x="597" y="162" width="596" height="116" rx="13" fill="#060a0c" stroke="#22313a"/>
+
+    <g color="#b5ffa9" fill="#b5ffa9">
+      <rect x="606" y="171" width="188" height="98" rx="9" fill="#0d1916"/>
+      <g transform="translate(628 201)" fill="none" stroke="#b5ffa9" stroke-width="2.6" stroke-linecap="round">
+        <rect x="4" y="2" width="24" height="33" rx="12"/>
+        <path d="M16 3v10m-11 4h22"/>
+      </g>
+      <text x="677" y="235" font-family="Consolas, monospace" font-size="36" font-weight="700">82%</text>
+    </g>
+    <g color="#ffc471" fill="#ffc471">
+      <rect x="801" y="171" width="188" height="98" rx="9" fill="#1d1610"/>
+      <g transform="translate(819 201)" fill="none" stroke="#ffc471" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1.5" y="5" width="36" height="27" rx="6"/>
+        <path d="M9 13h1m7 0h1m7 0h1m5 0h.1M9 20h1m7 0h1m7 0h1m5 0h.1M13 26h13"/>
+      </g>
+      <text x="875" y="235" font-family="Consolas, monospace" font-size="36" font-weight="700">64</text>
+      <path d="M946 197l-16 25h13l-4 18 19-26h-13l4-17Z"/>
+    </g>
+    <g color="#b9accf">
+      <rect x="996" y="171" width="188" height="98" rx="9" fill="#15131c"/>
+      <g transform="translate(1020 201)" fill="none" stroke="#b9accf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 8h16c6 0 9 4 11 11l2 7c1 6-4 9-8 6l-6-6H13l-6 6c-4 3-9 0-8-6l2-7c2-7 5-11 11-11Z"/>
+        <path d="M8 17h8m-4-4v8m15-4h.1m6 3h.1"/>
+      </g>
+      <path transform="translate(1098 207) scale(1.2)" fill="none" stroke="#b9accf" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"
+        d="M9 2v5m8-5v5m-3 1h7v5c0 3-1 5-4 6m-6-1c-3-1-5-3-5-5V8h2m5 12v4m-9-21 19 20"/>
+    </g>
+    <g font-size="16" font-weight="650" letter-spacing=".5" text-anchor="middle">
+      <text x="702" y="327" fill="#b8ffa8">Level</text>
+      <text x="895" y="327" fill="#ffc471">Charging</text>
+      <text x="1089" y="327" fill="#cec2df">Unavailable</text>
+    </g>
+    <text x="895" y="384" fill="#99aaa9" font-size="15" text-anchor="middle">Illustrative view · choose a device and an icon for each Unit</text>
+
+    <g transform="translate(582 481)" fill="none" stroke="#b8ffa8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 12a10 10 0 1 0 1 8m0-12v7h-7"/>
+    </g>
+    <text x="582" y="544" fill="#f0faf3" font-size="21" font-weight="700">Tap to refresh</text>
+    <text x="582" y="573" fill="#acc5ba" font-size="16">Or let it update automatically.</text>
+    <g transform="translate(940 482)" fill="none" stroke="#c7bcff" stroke-width="2.5" stroke-linecap="round">
+      <path d="M2 7h25M2 15h25M2 23h25"/>
+      <circle cx="11" cy="7" r="3" fill="#191f2b"/>
+      <circle cx="21" cy="15" r="3" fill="#191f2b"/>
+      <circle cx="8" cy="23" r="3" fill="#191f2b"/>
+    </g>
+    <text x="940" y="544" fill="#f3effb" font-size="21" font-weight="700">Style it your way</text>
+    <text x="940" y="573" fill="#c5bdd6" font-size="16">Native Foreground controls.</text>
+  </g>
+</svg>
