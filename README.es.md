@@ -33,8 +33,8 @@ DualShock 4, Switch Pro y mandos Xbox. También están en beta las lecturas
 Bluetooth de Windows, HID estándar y HeadsetControl. Consulta
 [la tabla de compatibilidad](docs/COMPATIBILITY.md) para ver modelos y conexiones.
 
-El paquete estará en [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases)
-cuando se publique. También se puede [compilar localmente](README.md#build-from-source).
+Puedes descargar el paquete de [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases/latest)
+e importarlo en FlexDesigner, o [compilarlo localmente](README.md#build-from-source).
 El plugin no envía los datos de la batería a un servicio en la nube.
 
 [Licencia MIT](LICENSE) · [Avisos de terceros](THIRD_PARTY_NOTICES.md).

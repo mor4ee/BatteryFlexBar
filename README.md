@@ -25,8 +25,9 @@ Windows 10/11 (x64), FlexBar, and FlexDesigner **Plugin API v1**. The verified
 host baseline is FlexDesigner **2.2.3**. The full hardware regression on 2.2.5
 Pre-release is still pending. This is not a FlexStudio SDK v2 plugin.
 
-Battery is currently in beta. Use a [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases)
-asset when one is available, or build from source below.
+Download the Windows x64 package from [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases/latest)
+and import it in FlexDesigner, or build from source below. Profiles marked
+**Beta** have not been verified on hardware for the listed connections.
 
 ## Supported devices
 

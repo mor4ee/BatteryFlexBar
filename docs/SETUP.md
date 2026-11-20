@@ -1,7 +1,7 @@
 # Install and configure Battery
 
 1. Install the Windows x64 `.flexplugin` through FlexDesigner. Use an official
-   [release](https://github.com/mor4ee/BatteryFlexBar/releases) when available, or
+   [release](https://github.com/mor4ee/BatteryFlexBar/releases/latest), or
    [build an archive](../README.md#build-from-source).
 2. Connect a peripheral. In FlexDesigner, add **Battery → Battery level**,
    open **Function**, and select that peripheral. Use the refresh action if it

@@ -38,8 +38,8 @@ Windows Bluetooth, стандартный HID и опциональный Headse
 Сверяйте конкретную модель и способ подключения по
 [таблице совместимости](docs/COMPATIBILITY.md).
 
-Готовый пакет можно будет скачать из [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases).
-До публикации доступна [локальная сборка из исходников](README.md#build-from-source).
+Готовый пакет можно скачать из [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases/latest)
+и импортировать во FlexDesigner. Также доступна [локальная сборка из исходников](README.md#build-from-source).
 Данные читаются локально и не отправляются в облако.
 
 [Лицензия MIT](LICENSE) · [Сторонние компоненты](THIRD_PARTY_NOTICES.md).

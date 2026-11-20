@@ -31,7 +31,7 @@ Lamzu Aurora、部分鼠标和键盘、DualSense Edge、DualShock 4、Switch Pro
 手柄。Windows 蓝牙电量、标准 HID 电量和可选的 HeadsetControl 也处于测试阶段。
 具体型号和连接要求请参阅[兼容性表](docs/COMPATIBILITY.md)。
 
-发布后可从 [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases) 下载，
+可从 [GitHub Releases](https://github.com/mor4ee/BatteryFlexBar/releases/latest) 下载并导入 FlexDesigner，
 也可以[在本地构建](README.md#build-from-source)。本插件不会将电量数据发送到云端。
 
 [MIT 许可证](LICENSE) · [第三方声明](THIRD_PARTY_NOTICES.md)。
