@@ -43,6 +43,12 @@ export type V1BatteryRuntimeOptions = {
 
 export const BATTERY_CID = 'com.mor4ee.battery.level';
 
+function isBatteryKeyWithGeometry(key: V1BatteryKey): boolean {
+  if (!key || key.cid !== BATTERY_CID || !Number.isSafeInteger(key.uid) || key.uid < 0) return false;
+  const width = key.width ?? key.style?.width;
+  return typeof width === 'number' && Number.isFinite(width) && width > 0;
+}
+
 export class V1BatteryRuntime {
   private readonly keys = new Map<string, Map<number, V1BatteryKey>>();
   private readonly states = new Map<string, BatteryMonitorState>();
@@ -58,7 +64,19 @@ export class V1BatteryRuntime {
   constructor(private readonly options: V1BatteryRuntimeOptions) {}
 
   handleAlive(serialNumber: string, keys: readonly V1BatteryKey[]): void {
-    if (!this.canRender(serialNumber)) return;
+    if (this.stopped || !Array.isArray(keys)) return;
+    if (this.disconnectedPanels.has(serialNumber)) {
+      // FlexDesigner can send the actual post-Upload layout without a
+      // separate connected status. Only a new alive payload with Battery
+      // geometry may resume drawing; disconnect already discarded old keys.
+      const freshKeys = keys.filter(isBatteryKeyWithGeometry);
+      if (freshKeys.length === 0) return;
+      keys = freshKeys;
+      this.disconnectedPanels.delete(serialNumber);
+      this.options.logger?.debug('Battery layout recovered from fresh alive', {
+        serialNumber, keyCount: keys.length
+      });
+    }
     const active = this.keys.get(serialNumber) ?? new Map<number, V1BatteryKey>();
     this.keys.set(serialNumber, active);
     for (const key of keys) {

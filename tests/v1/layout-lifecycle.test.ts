@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { UNAVAILABLE_GLYPH } from '../../src/core/battery-icons';
 import { BATTERY_CID, V1BatteryRuntime, type BatterySourceReadResult, type V1BatteryKey,
   type V1BatteryRuntimeOptions } from '../../src/v1/battery-runtime';
 
@@ -45,6 +46,62 @@ test('disconnect/connect cannot revive old layout; fresh alive supplies a reinde
   assert.ok(frames.every(frame => frame.uid === 9 && frame.width === 120));
 });
 
+test('post-Upload alive recovers a disconnected panel without connected and replaces the stale charge', async t => {
+  const frames: V1BatteryKey[] = [];
+  let reads = 0;
+  const subject = runtime({
+    read: async () => ++reads === 1 ? result(98) : [{ sourceId: 'fake', snapshots: [] }],
+    draw: (_panel, frame) => { frames.push(frame); }
+  });
+  t.after(() => subject.stop());
+  subject.handleAlive('A', [key(8)]);
+  await subject.refresh();
+  assert.equal(frames.at(-1)?.title, '98%');
+  frames.length = 0;
+
+  subject.setDeviceConnected('A', false);
+  subject.setDeviceConnected('A', false);
+  subject.handleData('A', key(8));
+  assert.equal(reads, 1);
+  assert.equal(frames.length, 0);
+  subject.handleAlive('A', [key(9, 130), key(10, 130)]);
+  await subject.refresh();
+  assert.equal(subject.hasActiveKeys(), true);
+  assert.equal(reads, 2);
+  assert.ok(frames.every(frame => [9, 10].includes(frame.uid) && frame.width === 130));
+  for (const uid of [9, 10]) {
+    assert.equal(frames.filter(frame => frame.uid === uid).at(-1)?.title, UNAVAILABLE_GLYPH);
+  }
+
+  subject.handleData('A', key(8));
+  assert.equal(reads, 2);
+  subject.handleData('A', key(10, 999));
+  await subject.refresh();
+  assert.equal(reads, 3);
+  assert.equal(frames.at(-1)?.width, 130);
+});
+
+test('after disconnect, empty or invalid alive payloads cannot resume Battery', async t => {
+  let reads = 0;
+  const frames: V1BatteryKey[] = [];
+  const subject = runtime({ read: async () => { reads++; return result(); },
+    draw: (_panel, frame) => { frames.push(frame); } });
+  t.after(() => subject.stop());
+  subject.setDeviceConnected('A', false);
+  subject.handleAlive('A', []);
+  subject.handleAlive('A', [{ ...key(), cid: 'another.plugin.key' }, key(9, 0), key(-1), key(10, NaN)]);
+  subject.handleData('A', key());
+  await tick();
+  assert.equal(subject.hasActiveKeys(), false);
+  assert.equal(reads, 0);
+  assert.equal(frames.length, 0);
+
+  subject.handleAlive('A', [key(9, 0), { ...key(11), width: undefined }]);
+  await subject.refresh();
+  assert.equal(reads, 1);
+  assert.ok(frames.length > 0 && frames.every(frame => frame.uid === 11 && frame.style?.width === 180));
+});
+
 test('obsolete helper read is discarded; new reads wait without overlapping hardware work', async t => {
   const old = deferred<readonly BatterySourceReadResult[]>();
   const fresh = deferred<readonly BatterySourceReadResult[]>();
@@ -56,7 +113,6 @@ test('obsolete helper read is discarded; new reads wait without overlapping hard
   subject.handleAlive('A', [key()]);
   const first = subject.refresh();
   subject.setDeviceConnected('A', false);
-  subject.setDeviceConnected('A', true);
   subject.handleAlive('A', [key(9, 120)]);
   const second = subject.refresh();
   const third = subject.refresh();
@@ -84,7 +140,6 @@ test('one panel draw lane survives UID replacement and does not block a differen
   subject.handleAlive('A', [key()]);
   await subject.refresh();
   subject.setDeviceConnected('A', false);
-  subject.setDeviceConnected('A', true);
   subject.handleAlive('A', [key(9, 120)]);
   await subject.refresh();
   assert.equal(frames.length, 1);
